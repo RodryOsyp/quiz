@@ -1,3 +1,4 @@
+import { JoinCodeForm } from "@/components/join-code";
 import { Button, buttonClass } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Logo } from "@/components/ui/logo";
@@ -39,13 +40,7 @@ export default function HomePage() {
         <p className="max-w-md text-lg text-muted">
           Введи код комнаты с экрана ведущего!
         </p>
-        <div className="flex w-full max-w-sm flex-col gap-3 rounded-3xl border border-line bg-surface p-3">
-          <Input
-            placeholder="000000"
-            className="h-16 text-center font-display text-3xl tracking-[0.3em]"
-          />
-          <Button size="lg">Войти в игру</Button>
-        </div>
+        <JoinCodeForm/>
       </section>
     </main>
   );
