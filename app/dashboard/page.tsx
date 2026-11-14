@@ -8,8 +8,18 @@ export const metadata: Metadata = {
   title: "My quizzes",
 };
 
+type QuizSummary = {
+  id: string;
+  title: string;
+  questions: { id: string }[];
+};
 
-export default function DashboardPage() {
+async function getQuizzes(): Promise<QuizSummary[]> {
+  return [];
+}
+
+export default async function DashboardPage() {
+  const quizzes = await getQuizzes();
   return (
     <div className="space-y-8">
       <div className="flex flex-wrap items-end justify-between gap-4">
