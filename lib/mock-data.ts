@@ -12,7 +12,6 @@ export type Quiz = {
   questions: Question[];
 };
 
-
 const quizzes: Quiz[] = [
   {
     id: 1,
@@ -153,17 +152,39 @@ const quizzes: Quiz[] = [
       {
         id: 9,
         text: "Как закомментировать одну строку в JavaScript?",
-        options: ["# коммент", "// коммент", "/* коммент */", "<!-- коммент -->"],
+        options: [
+          "# коммент",
+          "// коммент",
+          "/* коммент */",
+          "<!-- коммент -->",
+        ],
         correctIndex: 1,
         timeLimit: 20,
       },
       {
         id: 10,
         text: "Какой метод преобразует строку в целое число?",
-        options: ["parseInt()", "parseFloat()", "Number.toFixed()", "Math.round()"],
+        options: [
+          "parseInt()",
+          "parseFloat()",
+          "Number.toFixed()",
+          "Math.round()",
+        ],
         correctIndex: 0,
         timeLimit: 20,
       },
     ],
   },
 ];
+export function getQuizzes(): Quiz[] {
+  return quizzes;
+}
+function wait(ms: number) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+export async function getQuiz(id: number) {
+  await wait(1000);
+
+  return quizzes.find((quiz) => quiz.id === id) ?? null;
+}

@@ -2,21 +2,13 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Plus } from "lucide-react";
 import { buttonClass } from "@/components/ui/button";
-import { QuizCard } from "@/components/ui/quiz-button";
+import { QuizCard } from "@/components/ui/quiz-card";
+import { getQuizzes } from "@/lib/mock-data";
 
 export const metadata: Metadata = {
   title: "My quizzes",
 };
 
-type QuizSummary = {
-  id: string;
-  title: string;
-  questions: { id: string }[];
-};
-
-async function getQuizzes(): Promise<QuizSummary[]> {
-  return [];
-}
 
 export default async function DashboardPage() {
   const quizzes = await getQuizzes();
